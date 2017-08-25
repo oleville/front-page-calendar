@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import moment from 'moment-timezone'
 import qs from 'querystring'
 import CalendarTile from './calendar-tile'
+import { apiKey, calendarId } from './config'
 import './App.css'
 
 const TIMEZONE = 'America/Winnipeg'
-const GOOGLE_CALENDAR_API_KEY = 'AIzaSyBc_UI5aaMwTPmfut2rEK_2ElOfpZp-wQI'
-const CALENDAR_ID = 'stolaf.edu_fvulqo4larnslel75740vglvko@group.calendar.google.com'
 
 class App extends Component {
 	state = {
@@ -20,15 +19,15 @@ class App extends Component {
 		this.refresh()
 	}
 
-	buildCalendarUrl(calendarId: string) {
-		let calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events`
+	buildCalendarUrl(cId) {
+		let calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${cId}/events`
 		let params = {
 			maxResults: 5,
 			orderBy: 'startTime',
 			showDeleted: false,
 			singleEvents: true,
 			timeMin: new Date().toISOString(),
-			key: GOOGLE_CALENDAR_API_KEY,
+			key: apiKey,
 		}
 		return `${calendarUrl}?${qs.stringify(params)}`
 	}
@@ -49,7 +48,7 @@ class App extends Component {
 	}
 
 	getEvents = async (now = moment.tz(TIMEZONE)) => {
-		let url = this.buildCalendarUrl(CALENDAR_ID)
+		let url = this.buildCalendarUrl(calendarId)
 
 		let data = []
 		try {
