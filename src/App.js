@@ -5,7 +5,7 @@ import CalendarTile from './calendar-tile'
 import { apiKey, calendarId } from './config'
 import './App.css'
 
-const TIMEZONE = 'America/Winnipeg'
+const TIMEZONE = 'America/Winnipeg' // Central Time
 
 class App extends Component {
 	state = {
@@ -84,23 +84,30 @@ class App extends Component {
 
 	render() {
 		if (!this.state.loaded) {
+			// We're still getting the events form the server.
 			return null
 		}
 
-		console.log(this.state.events)
-		return (
-				<div>
-					{this.state.events.map((eventInfo) => {
-						return <CalendarTile
-							location={eventInfo.location}
-							title={eventInfo.summary}
-							startTime={eventInfo.startTime}
-							endTime={eventInfo.endTime}
-						/>
-					})}
-
-				</div>
-		)
+		if (this.state.events && this.state.events.length > 0) {
+			// There are upcoming events. Render them.
+			return (
+					<div>
+						{this.state.events.map((eventInfo) => {
+							return <CalendarTile
+								location={eventInfo.location}
+								title={eventInfo.summary}
+								startTime={eventInfo.startTime}
+								endTime={eventInfo.endTime}
+							/>
+						})}
+					</div>
+			)
+		} else {
+			// There are no upcoming events. Tell the user.
+			return (
+				<p> No upcoming events. </p>
+			)
+		}
 	}
 }
 

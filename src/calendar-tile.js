@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import moment from 'moment-timezone'
 
+// A list of the days of the week, so that we can tell the user that rather than the date (easier to read)
 const DAYS_OF_WEEK = [
 	'Monday',
 	'Tuesday',
@@ -23,14 +24,17 @@ class CalendarTile extends Component {
 		loading: true
 	}
 
+	// Is the event today?
 	isToday(m) {
 		return m.isSame(this.state.now.clone().startOf('day'), 'd')
 	}
 
+	// Is the event tomorrow?
 	isTomorrow(m) {
 		return m.isSame(this.state.now.clone().add(1, 'days').startOf('day'), 'd')
 	}
 
+	// If the event is over 1 week away, we want to tell the user the actual date, rather than the day of week.
 	isOverOneWeek(m) {
 		return m.isAfter(this.state.now.clone().add(7, 'days').startOf('day'), 'd')
 	}
