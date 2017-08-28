@@ -91,7 +91,7 @@ class App extends Component {
 		if (this.state.events && this.state.events.length > 0) {
 			// There are upcoming events. Render them.
 			return (
-					<div>
+					<div className="calendar">
 						{this.state.events.map((eventInfo) => {
 							return <CalendarTile
 								location={eventInfo.location}
@@ -105,7 +105,9 @@ class App extends Component {
 		} else {
 			// There are no upcoming events. Tell the user.
 			return (
-				<p> No upcoming events. </p>
+					<div className="calendar">
+						<p> No upcoming events. </p>
+					</div>
 			)
 		}
 	}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import moment from 'moment-timezone'
+import './calendar-tile.css'
 
 // A list of the days of the week, so that we can tell the user that rather than the date (easier to read)
 const DAYS_OF_WEEK = [
@@ -65,11 +66,11 @@ class CalendarTile extends Component {
 
 			console.log(this.state.today ? 'Today' : (this.state.tomorrow ? 'Tomorrow' : this.state.startDate))
 			return (
-				<div>
-					<h1>{this.state.today ? 'Today' : (this.state.tomorrow ? 'Tomorrow' : this.state.startDate)} </h1>
-					<h2>{this.props.title}</h2>
-					<h3>{this.props.location}</h3>
-					<p>{this.state.startTime} - {this.state.endTime}</p>
+				<div className="calendar-tile">
+					<h1 className="calendar-dow">{this.state.today ? 'Today' : (this.state.tomorrow ? 'Tomorrow' : this.state.startDate)} </h1>
+					<h2 className="calendar-title">{this.props.title}</h2>
+					<p className="calendar-loc">{this.props.location}</p>
+					<p className="calendar-time">{this.state.startTime} - {this.state.endTime}</p>
 				</div>
 			)
 	}

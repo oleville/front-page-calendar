@@ -1,0 +1,27 @@
+.calendar-tile {
+  flex: auto;
+  flex-grow: 0;
+  height: 200px;
+  width: 200px;
+  margin-left: .5%;
+  margin-right: .5%;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: yellow;
+}
+
+.calendar-dow {
+  text-align: center;
+  font-size: 1em;
+}
+
+.calendar-title {
+  font-size: 1em;
+}
+
+.calendar-loc {
+}
+
+.calendar-time {
+
+}
