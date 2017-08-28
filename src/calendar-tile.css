@@ -7,12 +7,17 @@
   margin-right: .5%;
   padding-left: 5px;
   padding-right: 5px;
-  background-color: yellow;
+}
+
+.font {
+  font-family: "RalewayBold";
+  text-decoration: none;
 }
 
 .calendar-dow {
   text-align: center;
   font-size: 1em;
+  color: #F7B600;
 }
 
 .calendar-title {

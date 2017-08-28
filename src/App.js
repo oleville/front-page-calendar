@@ -91,22 +91,28 @@ class App extends Component {
 		if (this.state.events && this.state.events.length > 0) {
 			// There are upcoming events. Render them.
 			return (
-					<div className="calendar">
-						{this.state.events.map((eventInfo) => {
-							return <CalendarTile
-								location={eventInfo.location}
-								title={eventInfo.summary}
-								startTime={eventInfo.startTime}
-								endTime={eventInfo.endTime}
-							/>
-						})}
+					<div>
+						<h3 className="calendar-header"> Upcoming Events </h3>
+						<div className="calendar">
+							{this.state.events.map((eventInfo) => {
+								return <CalendarTile
+									location={eventInfo.location}
+									title={eventInfo.summary}
+									startTime={eventInfo.startTime}
+									endTime={eventInfo.endTime}
+								/>
+							})}
+						</div>
 					</div>
 			)
 		} else {
 			// There are no upcoming events. Tell the user.
 			return (
-					<div className="calendar">
-						<p> No upcoming events. </p>
+					<div>
+						<h3 className="calendar-header"> Upcoming Events </h3>
+						<div className="calendar">
+							<p> No upcoming events. </p>
+						</div>
 					</div>
 			)
 		}
