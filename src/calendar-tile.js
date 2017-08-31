@@ -64,10 +64,9 @@ class CalendarTile extends Component {
 				return
 			}
 
-			console.log(this.state.today ? 'Today' : (this.state.tomorrow ? 'Tomorrow' : this.state.startDate))
 			return (
 				<div className="calendar-tile">
-					<h1 className="font calendar-dow">{this.state.today ? 'Today' : (this.state.tomorrow ? 'Tomorrow' : this.state.startDate)} </h1>
+					<h1 className="bold calendar-dow">{this.state.today ? 'Today' : (this.state.tomorrow ? 'Tomorrow' : this.state.startDate)} </h1>
 					<h2 className="font calendar-title">{this.props.title}</h2>
 					<p className="font calendar-loc">{this.props.location}</p>
 					<p className="font calendar-time">{this.state.startTime} - {this.state.endTime}</p>

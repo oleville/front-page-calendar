@@ -22,7 +22,7 @@ class App extends Component {
 	buildCalendarUrl(cId) {
 		let calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${cId}/events`
 		let params = {
-			maxResults: 5,
+			maxResults: 4,
 			orderBy: 'startTime',
 			showDeleted: false,
 			singleEvents: true,

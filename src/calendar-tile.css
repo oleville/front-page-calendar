@@ -9,19 +9,22 @@
   padding-right: 5px;
 }
 
-.font {
+.bold {
   font-family: "RalewayBold";
-  text-decoration: none;
+}
+
+.font {
+  font-family: "Raleway";
 }
 
 .calendar-dow {
   text-align: center;
-  font-size: 1em;
+  font-size: 20px;
   color: #F7B600;
 }
 
 .calendar-title {
-  font-size: 1em;
+  padding-top: 10px;
 }
 
 .calendar-loc {
