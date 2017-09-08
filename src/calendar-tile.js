@@ -49,7 +49,7 @@ class CalendarTile extends Component {
 		const overOneWeek = this.isOverOneWeek(startMoment)
 
 		this.setState({
-			startDate: !overOneWeek ? DAYS_OF_WEEK[startMoment.day()] : startMoment.format('MMM Do'),
+			startDate: !overOneWeek ? DAYS_OF_WEEK[startMoment.day()+1] : startMoment.format('MMM Do'),
 			endDate: DAYS_OF_WEEK[startMoment.day()],
 			startTime: `${startMoment.format('h:mmA')}`,
 			endTime: `${endMoment.format('h:mmA')}`,
