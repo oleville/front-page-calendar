@@ -4,13 +4,13 @@ import './calendar-tile.css'
 
 // A list of the days of the week, so that we can tell the user that rather than the date (easier to read)
 const DAYS_OF_WEEK = [
+	'Sunday',
 	'Monday',
 	'Tuesday',
 	'Wednesday',
 	'Thursday',
 	'Friday',
-	'Saturday',
-	'Sunday'
+	'Saturday'
 	]
 
 class CalendarTile extends Component {
