@@ -1,7 +1,6 @@
 .calendar-tile {
   flex: auto;
   flex-grow: 0;
-  height: 200px;
   width: 200px;
   margin-left: .5%;
   margin-right: .5%;
